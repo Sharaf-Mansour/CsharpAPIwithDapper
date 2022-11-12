@@ -5,7 +5,6 @@ using System.Data;
 var builder = WebApplication.CreateBuilder(args);
 var constring = builder.Configuration.GetConnectionString("DB");
 var con = new SqlConnection(constring);
-
 builder.Services.AddCors(o => o.AddPolicy("AllowAll",
  P => P.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin())).AddEndpointsApiExplorer().AddSwaggerGen();
 var app = builder.Build();
